@@ -1,0 +1,40 @@
+class CoffeeMachine
+{
+    private int milk = 1000;
+    private int beans = 500;
+    private int water = 1000;
+    public void makeEspresso()
+    {
+        if (water<50 || beans<10)
+        {
+            System.out.println("Not enough resources to make Espresso");
+            return;
+        }
+        System.out.println("Making Espresso...");
+        water-=50;
+        beans-=10;
+        System.out.println("Espresso ready!");
+    }
+    public void makeLatte()
+    {
+        if (water<50 || beans<10 || milk<100)
+        {
+            System.out.println("Not enough resources to make Latte");
+            return;
+        }
+        System.out.println("Making Latte...");
+        water-=50;
+        beans-=10;
+        milk-=100;
+        System.out.println("Latte ready!");
+    }
+}
+public class Main
+{
+	public static void main(String[] args)
+	{
+		CoffeeMachine machine = new CoffeeMachine();
+		machine.makeLatte();
+		machine.makeEspresso();
+	}
+}
