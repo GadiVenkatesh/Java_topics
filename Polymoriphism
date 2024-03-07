@@ -1,0 +1,64 @@
+interface Vehicles
+{
+    void move();
+    void stop();
+    void honk();
+}
+class Car implements Vehicles
+{
+    public void move()
+    {
+        System.out.println("Car is moving uding engine.");
+    }
+    public void stop()
+    {
+         System.out.println("Car is stoped using breaks");
+    }
+    public void honk()
+    {
+         System.out.println("Car is stoped using honks");
+    }
+}
+class Bicycle implements Vehicles
+{
+    public void move()
+    {
+        System.out.println("Bicycle is moving uding pedals.");
+    }
+    public void stop()
+    {
+          System.out.println("Bicycle is stoped using breaks");
+    }
+    public void honk()
+    {
+        //Sytem.out.pritnln();
+    }
+}
+class Airplane implements Vehicles
+{
+    public void move()
+    {
+        System.out.println("Airplane is flying using jet Engines");
+    }
+    public void stop()
+    {
+         //Sytem.out.pritnln();
+    }
+    public void honk()
+    {
+         System.out.println("Airplanes alerts signals");
+    }
+}
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Vehicles[] v = new Vehicles[]{new Car(),new Bicycle(),new Airplane()};
+		for(Vehicles V : v)
+		{
+		    V.move();
+		    V.stop();
+		    V.honk();
+		}
+	}
+}
