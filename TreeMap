@@ -1,0 +1,17 @@
+import java.util.TreeMap;
+public class Main
+{
+	public static void main(String[] args)
+	{
+		TreeMap<String,Integer> list = new TreeMap();
+		list.put("Bob",25);
+		list.put("Alice",30);
+		list.put("John",35);
+		for(String name : list.keySet())
+		{
+		   System.out.println(name);
+		   System.out.println(list.get(name));
+		}
+		
+	}
+}
