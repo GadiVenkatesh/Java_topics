@@ -1,0 +1,15 @@
+import java.util.HashSet;
+public class Main
+{
+	public static void main(String[] args)
+	{
+		HashSet<String> list = new HashSet();
+		list.add("Apple");
+		list.add("Banana");
+		list.add("Apple");
+		for(String l : list)
+		{
+		    System.out.println(l);
+		}
+	}
+}
