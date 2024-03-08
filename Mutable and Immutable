@@ -1,0 +1,12 @@
+1.Mutable Objects
+These objects can be modified after their creation like ArrayList,StringBuilder and hashmap.
+
+StringBuilder s = "Hello"
+s.append("World!")
+System.out.println("s");
+
+2.Immutable Objects
+These objects cannot be modified after creation. Actually modification results creation of new objects.
+String s = "Hello";
+s= s.concat("World!");
+System.out.println("s");
