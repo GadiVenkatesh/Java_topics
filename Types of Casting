@@ -1,0 +1,11 @@
+1.Implicit Casting :
+when the destination datatype has large of values then the source.
+
+int a = 10;
+double b = a;
+
+2.Explicit Casting :
+when the large data type is converted to smaller datatype. Loss of precision. you need to specify the datatype for casting.
+
+double b = 10.99;
+int a = (int ) b;
