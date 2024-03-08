@@ -1,0 +1,16 @@
+1. New
+
+when a thread is created
+
+2.Runnable
+
+Start() is exceuted and ready to run but scheduler not scheduled yet.
+
+3.Running
+Run() is exceuted
+It starts executing actively.
+
+4.Blocked/Waiting/Sleeping
+
+5.Dead
+Once after the run is executed.
