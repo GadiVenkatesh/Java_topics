@@ -1,0 +1,49 @@
+My Answers:
+1)What is a class in Java?
+
+  its a blueprint of an object define attributes and methods.
+
+2)What is an object in Java?
+
+  its a real world entity
+
+What is the difference between a class and an object?
+ class can be instaintied by an object
+ object is the refernce of the class instance
+
+What is encapsulation and why is it important in OOP?
+  its binds attributes and methods of the class
+  
+How do you achieve encapsulation in Java?
+
+What is inheritance in Java?
+  the sub class can achieve the properties of the parent class using extends keyword
+
+Explain the types of inheritance in Java.
+  1.Single Inheritance
+
+What is the super keyword in Java?
+ this keyword is used to invoke the parent method from the child class
+What is polymorphism in Java?
+ ploy means many morphism means forms
+Explain method overloading and method overriding in Java.
+ Overloading will have same method name but different method signatures
+
+ Overriding is the child class will have the same name but the chils class overrides the parent method
+What is an abstract class in Java?
+ it can abstract methods and attributes
+What is an interface in Java?
+it is 100% abstract class it will have only defintion but no imeplementation
+What is the difference between an abstract class and an interface?
+abstract class attributes while interface cannot have.
+What is the final keyword in Java?
+which cannot be modified
+What is a constructor in Java?
+it will have same name as class but it will not have any return type.
+What is the purpose of the this keyword in Java?
+this keyword refers current object reference
+What is method chaining in Java?
+What is the static keyword in Java?
+it can be called without instantition
+What is the difference between static and instance variables/methods?
+What is a package in Java?
