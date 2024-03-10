@@ -1,0 +1,30 @@
+What is a constructor in Java?
+
+A constructor in Java is a special type of method that is automatically called when an object of a class is created. It initializes the state of the object by allocating memory and initializing instance variables.
+What is the purpose of a constructor?
+
+The purpose of a constructor is to initialize the state of an object when it is created. It sets the initial values for the object's instance variables and performs any necessary setup tasks.
+How is a constructor different from a method?
+
+Constructors have the same name as the class and do not have a return type, while methods can have any name and return type. Constructors are called automatically when an object is created, whereas methods are called explicitly by name.
+Can a constructor have a return type?
+
+No, a constructor does not have a return type, not even void. Its name must be the same as the class name.
+Can a class have multiple constructors?
+
+Yes, a class can have multiple constructors, known as constructor overloading. Each constructor must have a unique signature (i.e., different parameters).
+What is constructor chaining?
+
+Constructor chaining refers to the process of calling one constructor from another constructor within the same class or from the subclass constructor to the superclass constructor using the super keyword.
+What is the default constructor?
+
+If a class does not explicitly define any constructors, Java provides a default constructor. It has no parameters and initializes all instance variables to their default values (e.g., 0 for numeric types, null for object references, etc.).
+Can constructors be inherited?
+
+Constructors are not inherited in Java, but constructors of the superclass are called implicitly or explicitly from the subclass constructor using the super keyword.
+What is the purpose of a parameterized constructor?
+
+A parameterized constructor allows you to initialize the object's state with specific values passed as arguments during object creation. It provides flexibility in initializing objects with different values.
+What is the constructor's role in object initialization?
+
+Constructors play a crucial role in initializing the state of objects by allocating memory, initializing instance variables, and performing any necessary setup tasks required for the object's proper functioning.
