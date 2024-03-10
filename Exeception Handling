@@ -1,3 +1,8 @@
+java.lang.object;
+	java.lang.throwable;
+		java.lang.error
+		java.lang.Exception;
+
 Execption Handling:
 
 These deal with errorneous situations that occur during the execution of the program.
