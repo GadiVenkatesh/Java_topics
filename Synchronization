@@ -1,0 +1,13 @@
+Synchronization allows multiple threads to coordinate access to shared resources to ensure thread safety and prevent data corruption.
+
+1.Concurrency and Shared Resources :
+
+2.Thread Safety
+
+3.Synchronized Method:
+
+4.Synchronized Block
+
+5.Lock Objects: ReentrantLock
+
+6.Votaile Keyword
