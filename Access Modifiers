@@ -1,0 +1,29 @@
+1)What are access modifiers in Java?
+Access modifiers are keywords that determine the accessibility or visibility of classes, methods, and variables in Java.
+
+2)What are the different types of access modifiers in Java?
+Java has four types of access modifiers: public, protected, default (package-private), and private.
+
+3)Explain the public access modifier.
+The public access modifier makes a class, method, or variable accessible from any other class in the same package or from any other package.
+
+4)Explain the protected access modifier.
+The protected access modifier makes a class, method, or variable accessible within the same package or by subclasses (even if they are in a different package).
+
+5)Explain the default (no modifier) access modifier.
+The default access modifier (also known as package-private) makes a class, method, or variable accessible only within the same package.
+
+6)Explain the private access modifier.
+The private access modifier makes a method or variable accessible only within the same class. It is the most restrictive access level.
+
+7)What is the default access modifier for class members (methods and variables) if no access modifier is specified?
+The default access modifier for class members is package-private, meaning they are accessible within the same package but not from outside the package.
+
+8)Can you provide an example where you would use each type of access modifier?
+This question tests the candidate's understanding of when to use each access modifier based on the desired level of visibility and encapsulation.
+
+9)What is the access level of a class if no access modifier is specified?
+If no access modifier is specified for a class, the default access level is package-private, meaning the class is accessible only within the same package.
+
+10)Why is encapsulation important in object-oriented programming?
+This question explores the importance of encapsulation in terms of data hiding, abstraction, and maintaining the integrity of class implementations.
