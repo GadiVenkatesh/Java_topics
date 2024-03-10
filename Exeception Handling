@@ -1,0 +1,55 @@
+Execption Handling:
+
+These deal with errorneous situations that occur during the execution of the program.
+
+1.Checked Execeptions:
+These are checked at compile time.The programs can gracefully recover from errors,maintain stablity.If a method throws exception it mut thrown from throws keyword
+or using try catch block.
+ex:IOExeception,SQLExeception
+
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.File;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    try{
+	        
+	        File file = new File("example.txt");
+	        Scanner scanner = new Scanner(file);
+	        while(scanner.hasNextLine())
+	        {
+	            String line = scanner.nextLine();
+	        }
+	        scanner.close();
+	    }
+	    catch(FileNotFoundException e)
+	    {
+	        System.out.println(e.getMessage());
+	    }
+	    
+		
+	}
+}
+
+
+2.Unchecked Execeptions:
+These are unchecked at compile-time.These are typically programming errors like ArrayOutOfBound,Divide By Zero Error.
+
+public class Main {
+    public static void main(String[] args) {
+        int b;
+        try {
+            b = 10 / 0; // This line will throw an ArithmeticException
+            System.out.println(b); // This line will not be reached
+        } catch (ArithmeticException e) {
+            System.out.println("Exception occurred: " + e.getMessage());
+        }
+        System.out.println("Program continues after the exception handling");
+    }
+}
+
+
+
