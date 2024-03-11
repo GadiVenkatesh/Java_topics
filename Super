@@ -1,0 +1,42 @@
+Super Keyword is used invoke super class constructor,method,attributies from the sub class.
+class Animal
+{
+    String name;
+    Animal(String name)
+    {
+        this.name = name;
+    }
+    public void sound()
+    {
+     System.out.println("Animal makes sound"); 
+    }
+}
+
+class dog extends Animal
+{
+    String breed;
+    dog(String name,String breed)
+    {
+        super(name);
+        this.breed = breed;
+        
+    }
+    public void sound()
+    {
+    System.out.println("bow bow bow..");
+    super.sound();
+    }
+    public void details()
+    {
+         System.out.println(super.name);
+    }
+}
+class Main
+{
+public static void main(String[] args)
+{
+dog g = new dog("buddy","Labradory");
+g.sound();
+g.details();
+}
+}
