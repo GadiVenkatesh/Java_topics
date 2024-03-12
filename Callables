@@ -1,1 +1,40 @@
 Callables are a functional interface which has Call() method.
+
+import java.util.concurrent.*;
+
+class MyCallable implements Callable<Integer> {
+    private int num;
+
+    public MyCallable(int num) {
+        this.num = num;
+    }
+
+    public Integer call() {
+        // Perform some computation
+        int result = num * 2;
+        return result;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        // Create an ExecutorService with a fixed thread pool size of 1
+        ExecutorService executor = Executors.newFixedThreadPool(1);
+
+        // Create a Callable task
+        Callable<Integer> callable = new MyCallable(5);
+
+        // Submit the Callable task to the executor
+        Future<Integer> future = executor.submit(callable);
+
+        // Shutdown the executor after executing the task
+        executor.shutdown();
+
+        // Retrieve the result of the computation
+        Integer result = future.get();
+
+        // Print the result
+        System.out.println("Result: " + result);
+    }
+}
+
