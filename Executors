@@ -1,3 +1,108 @@
+PRINTING 100 numbers without executors:
+import java.util.concurrent.locks.*;
+
+class NumberPrinter {
+    private int count = 1;
+    private final int limit = 100;
+    private final Lock lock = new ReentrantLock();
+    private final Condition evenCondition = lock.newCondition();
+    private final Condition oddCondition = lock.newCondition();
+    private boolean isEvenTurn = true;
+
+    public void printEven() {
+        while (count <= limit) {
+            lock.lock();
+            try {
+                while (!isEvenTurn) {
+                    evenCondition.await();
+                }
+                System.out.println(Thread.currentThread().getName() + ": " + count++);
+                isEvenTurn = false;
+                oddCondition.signal();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            } finally {
+                lock.unlock();
+            }
+        }
+    }
+
+    public void printOdd() {
+        while (count <= limit) {
+            lock.lock();
+            try {
+                while (isEvenTurn) {
+                    oddCondition.await();
+                }
+                System.out.println(Thread.currentThread().getName() + ": " + count++);
+                isEvenTurn = true;
+                evenCondition.signal();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            } finally {
+                lock.unlock();
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        NumberPrinter numberPrinter = new NumberPrinter();
+
+        Thread evenThread = new Thread(numberPrinter::printEven);
+        evenThread.setName("Even Thread");
+
+        Thread oddThread = new Thread(numberPrinter::printOdd);
+        oddThread.setName("Odd Thread");
+
+        evenThread.start();
+        oddThread.start();
+    }
+}
+
+PRINTING 100 numbers with executors:
+import java.util.concurrent.*;
+
+class NumberPrinter {
+    private final int limit = 100;
+
+    public Callable<Void> printEven() {
+        return () -> {
+            for (int i = 2; i <= limit; i += 2) {
+                System.out.println(Thread.currentThread().getName() + ": " + i);
+            }
+            return null;
+        };
+    }
+
+    public Callable<Void> printOdd() {
+        return () -> {
+            for (int i = 1; i <= limit; i += 2) {
+                System.out.println(Thread.currentThread().getName() + ": " + i);
+            }
+            return null;
+        };
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        NumberPrinter numberPrinter = new NumberPrinter();
+
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        Callable<Void> evenTask = numberPrinter.printEven();
+        Callable<Void> oddTask = numberPrinter.printOdd();
+
+        executorService.submit(evenTask);
+        executorService.submit(oddTask);
+
+        executorService.shutdown();
+    }
+}
+
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 public class Main
