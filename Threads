@@ -1,0 +1,38 @@
+Thread : a lightweight execution within the process,share common memory.Thread allow parallel execution.
+
+CREATION OF THREAD
+
+class Mythread extends Thread
+{
+    public  void run()
+    {
+        System.out.println("Thread is running...");
+    }
+}
+public class Main
+{
+	public static void main(String[] args)
+	{
+	    Mythread thread = new Mythread();
+	    thread.start();
+	}
+}
+
+CREATION OF THREAD
+
+class Mythread implements Runnable
+{
+    public  void run()
+    {
+        System.out.println("Thread is running...");
+    }
+}
+public class Main
+{
+	public static void main(String[] args)
+	{
+	    Mythread mythread = new Mythread();
+	    Thread thread = new Thread(mythread);
+	    thread.start();
+	}
+}
