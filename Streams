@@ -1,1 +1,32 @@
 Streams represents sequence of elements on operations to perfrom computations.
+
+Stream API allows developers to perform filter/map/reduce-like operations on collections of objects. It enables functional-style operations on streams of elements, allowing for concise and expressive code.
+
+Here are some key characteristics of Java Streams:
+
+Declarative Nature: Streams allow you to express what you want to accomplish, rather than how to accomplish it. This makes your code more readable and less error-prone.
+
+Lazy Evaluation: Stream operations are typically lazy, meaning they don't perform any processing until a terminal operation is invoked. This allows for efficient use of resources, especially when dealing with large datasets.
+
+Functional Operations: Streams support a variety of functional-style operations such as filter, map, reduce, collect, forEach, flatMap, etc. These operations can be chained together to form complex data processing pipelines.
+
+Parallel Processing: Streams can leverage parallelism to improve performance when processing large datasets. Parallel streams divide the data into multiple chunks and process them concurrently on multiple threads, utilizing multicore processors effectively.
+
+Here's a simple example demonstrating the usage of streams:
+
+java
+Copy code
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> fruits = Arrays.asList("apple", "banana", "cherry", "date", "elderberry");
+
+        // Filter fruits starting with letter 'a', then convert to uppercase, and print
+        fruits.stream()
+              .filter(fruit -> fruit.startsWith("a"))
+              .map(String::toUpperCase)
+              .forEach(System.out::println);
+    }
+}
