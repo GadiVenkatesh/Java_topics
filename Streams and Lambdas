@@ -17,3 +17,36 @@ public class Main
 	  System.out.println(SumOfSquares);
 	}
 }
+
+Lambda expressions, introduced in Java 8, provide a concise way to represent anonymous functions. They enable you to treat functionality as a method argument or to create anonymous classes without needing to write cumbersome boilerplate code.
+
+Here are the key points about lambda expressions:
+
+Anonymous Functions: Lambda expressions are essentially anonymous functions – methods without a name, which can be passed around as parameters or stored in variables.
+
+Simplified Syntax: Lambda expressions provide a concise syntax for writing functional interfaces. They consist of parameters, an arrow (->), and a body. The body can be a single expression or a block of code.
+
+Functional Interfaces: Lambda expressions are used primarily in the context of functional interfaces, which are interfaces with a single abstract method. Lambda expressions can be used to provide implementations for these methods.
+
+Type Inference: In many cases, the types of parameters in a lambda expression can be inferred by the compiler, which reduces the need for explicit type declarations.
+
+Readability and Conciseness: Lambda expressions make code more readable and concise, especially when used with collections, streams, and functional-style programming constructs.
+
+Here's a simple example of a lambda expression:
+
+java
+Copy code
+interface MyFunction {
+    int apply(int x, int y);
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Using lambda expression to implement the apply method
+        MyFunction add = (x, y) -> x + y;
+
+        // Calling the lambda expression
+        int result = add.apply(3, 4);
+        System.out.println("Result: " + result);
+    }
+}
